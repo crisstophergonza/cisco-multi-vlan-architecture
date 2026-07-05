@@ -1,0 +1,187 @@
+SW2-Reception>ena
+SW2-Reception#conf ter
+Enter configuration commands, one per line.  End with CNTL/Z.
+SW2-Reception(config)#interface fast
+SW2-Reception(config)#interface range fastEthernet 0/0-10
+interface range not validated - command rejected
+SW2-Reception(config)#interface range fastEthernet 0/1-10
+SW2-Reception(config-if-range)#switchport mode access
+SW2-Reception(config-if-range)#switchport access vlan 10
+SW2-Reception(config-if-range)#end
+SW2-Reception#
+%SYS-5-CONFIG_I: Configured from console by console
+
+SW2-Reception#write memory
+Building configuration...
+[OK]
+SW2-Reception#
+%LINK-5-CHANGED: Interface FastEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+
+
+
+
+
+
+
+
+
+SW2-Reception con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+SW2-Reception>ena
+SW2-Reception#conf term
+Enter configuration commands, one per line.  End with CNTL/Z.
+SW2-Reception(config)#interface gig
+SW2-Reception(config)#interface gigabitEthernet 0/1
+SW2-Reception(config-if)#swithcport mode trunk
+                             ^
+% Invalid input detected at '^' marker.
+	
+SW2-Reception(config-if)#switchcport mode trunk
+                               ^
+% Invalid input detected at '^' marker.
+	
+SW2-Reception(config-if)#sw
+SW2-Reception(config-if)#switchport mode trunk
+SW2-Reception(config-if)#end
+SW2-Reception#
+%SYS-5-CONFIG_I: Configured from console by console
+write memory
+Building configuration...
+[OK]
+SW2-Reception#
+SW2-Reception#show interfaces trunk
+Port        Mode         Encapsulation  Status        Native vlan
+Gig0/1      on           802.1q         trunking      1
+
+Port        Vlans allowed on trunk
+Gig0/1      1-1005
+
+Port        Vlans allowed and active in management domain
+Gig0/1      1,10
+
+Port        Vlans in spanning tree forwarding state and not pruned
+Gig0/1      1,10
+
+SW2-Reception#
+
+
+
+
+
+
+
+
+SW2-Reception con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+SW2-Reception>ena
+SW2-Reception#conf ter
+Enter configuration commands, one per line.  End with CNTL/Z.
+SW2-Reception(config)#vlan 20
+SW2-Reception(config-vlan)#name Admin-&-Finance-Floor2
+SW2-Reception(config-vlan)#end
+SW2-Reception#
+%SYS-5-CONFIG_I: Configured from console by console
+write memory
+Building configuration...
+[OK]
+SW2-Reception#
+SW2-Reception#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/11, Fa0/12, Fa0/13, Fa0/14
+                                                Fa0/15, Fa0/16, Fa0/17, Fa0/18
+                                                Fa0/19, Fa0/20, Fa0/21, Fa0/22
+                                                Fa0/23, Fa0/24, Gig0/2
+10   Reception-Floor1                 active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/5, Fa0/6, Fa0/7, Fa0/8
+                                                Fa0/9, Fa0/10
+20   Admin-&-Finance-Floor2           active    
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active    
+SW2-Reception#
+SW2-Reception#
+
+
+
+
+
+
+
+
+SW2-Reception con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+%LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to down
+
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+
+SW2-Reception>
